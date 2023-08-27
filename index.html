@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1>Quiz App !!</h1>
+
+    <div id="question-container">
+
+        <p id="question"></p>
+
+        <ul id="choices">
+            <li><input type="radio" name="choice" value="choice1"> <span id="choice1"></span></li>
+            <li><input type="radio" name="choice" value="choice2"> <span id="choice2"></span></li>
+            <li><input type="radio" name="choice" value="choice3"> <span id="choice3"></span></li>
+        </ul>
+    </div>
+
+    <button id="submit">Submit</button>
+
+    <div id="result"></div>
+    
+    <button id="retake" style="display: none;">Retake Quiz</button>
+
+        <!-- Footer section -->
+        <footer>
+            <p id="devinfo">Developed with love by <span class="devtitle">Amr Musharrafa</span> <i class="fa-sharp fa-solid fa-heart" style="color: #62560b; font-size: 18px ; margin-left: 10px"></i></p>
+        </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+/* Reset some default browser styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the background color to a light gold */
+body {
+    background: linear-gradient(to bottom, #FFD700, #d6c35b); /* Gold gradient */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Style the container */
+#question-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 75%; /* Set a fixed width for the container */
+    margin-bottom: 20px;
+}
+
+/* Style the heading */
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 100px;
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+/* Style the question text */
+#question {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left; /* Align question text to the left */
+}
+
+/* Style the answer choices */
+#choices {
+    text-align: left; /* Align choices to the left */
+}
+
+#choices li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+/* Style the submit button */
+#submit {
+    background-color: rgb(218, 186, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 213px;
+    width: 10%; 
+    transition: transform 0.1s; /* Add a smooth transition effect */
+}
+
+#submit:hover {
+    background-color: #ffbf00;
+}
+
+#submit:active {
+    transform: translateY(-5px); /* Move the button up 3 pixels when clicked */
+}
+
+/* Style the result display */
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+/* Style the "Retake Quiz" button */
+#retake {
+    background-color: rgb(218, 186, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    width: 10%; /* Make the button full width */
+    transition: transform 0.1s; /* Add a smooth transition effect */
+    display: none; /* Initially hidden */
+}
+
+#retake:hover {
+    background-color: #ffbf00;
+}
+
+#retake:active {
+    transform: translateY(-5px); /* Move the button up 3 pixels when clicked */
+}
+
+/* Style the answer choices */
+ul#choices li span {
+    color: #333;
+}
+
+/* Style the selected answer choice */
+input[type="radio"]:checked + span {
+    color: #FFD700;
+}
+
+/* Your existing CSS styles here */
+
+/* Style the footer section */
+ p {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: bold;
+ }
+
+ footer {
+    padding: 10px 0;
+    position: fixed; /* Set the footer to a fixed position */
+    bottom: 0; /* Place the footer at the bottom of the viewport */
+    width: 100%; /* Set the width of the footer to the width of the page */
+}
+
+.devtitle {
+    color: #a65b00e7;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+
+
