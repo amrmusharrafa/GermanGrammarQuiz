@@ -1,149 +1,223 @@
 /* Reset some default browser styles */
-body, ul {
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Set the background color to a light gold */
+/* General styles for the body */
 body {
-    background: linear-gradient(to bottom, #FFD700, #d6c35b); /* Gold gradient */
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff); /* Light gray to white gradient */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+  text-align: center;
+  padding: 0 10px; /* Added padding for small screen devices */
 }
 
-/* Style the container */
+/* Container styles */
 #question-container {
-    background-color: white;
-    border-radius: 10px;
+    position: relative; /* To position the progress bar and timer inside */
+    background-color: #fff;
+    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 75%; /* Set a fixed width for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Style the heading */
+
+
+#question-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings */
 h1 {
-    color: white;
-    text-align: center;
-    margin-bottom: 100px;
-    display: block;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-/* Style the question text */
-#question {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-align: left; /* Align question text to the left */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 
-/* Style the answer choices */
+/* Responsive heading adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+#progress-bar-container, #timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;  /* Reduced size */
+}
+/* Progress bar styles */
+/* Timer style */
+#timer {
+    font-size: 18px; /* Shrunk size */
+    font-weight: bold;
+    color: #e53935;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Progress bar container style */
+#progress-bar-container {
+    position: absolute;
+    top: 35px; /* Adjust position slightly below the timer */
+    right: 10px;
+    width: 50px;  /* Shrunk width */
+    height: 8px;   /* Shrunk height */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* Progress bar style */
+#progress-bar {
+    height: 100%;
+    
+    background-color: #76c7c0;
+    border-radius: inherit;
+    transition: width 0.4s ease;
+}
+
+/* Question text */
+#question {
+    text-align: left;
+    margin-left: 10px; /* Adjust this to align with the thin line */
+    padding-top : 8px;
+    padding-bottom: 10px; /* Space between question and thin line */
+    border-bottom: 2px solid #e0e0e0; /* Thin line under the question */
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Makes the question bold */
+    line-height:2; /* Adds spacing between lines of the question, if it's multiline */
+}
+
+/* Choices */
 #choices {
-    text-align: left; /* Align choices to the left */
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 #choices li {
-    list-style-type: none;
-    margin: 10px 0;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-/* Style the submit button */
-#submit {
-    background-color: rgb(218, 186, 0);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 0px;
-    margin-bottom: 213px;
-    width: 10%; 
-    transition: transform 0.1s; /* Add a smooth transition effect */
+#choices li:hover {
+  background-color: #f0f0f0;
 }
 
-#submit:hover {
-    background-color: #ffbf00;
+#choices li input {
+  margin-right: 10px;
 }
 
-#submit:active {
-    transform: translateY(-5px); /* Move the button up 3 pixels when clicked */
+/* Submit button */
+#submit, #retake {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  margin: 20px auto;
 }
 
-/* Style the result display */
+#submit:hover, #retake:hover {
+  background-color: #45a049;
+}
+
+#submit:active, #retake:active {
+  transform: translateY(2px);
+}
+
+/* Result display */
 #result {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-}
-/* Style the "Retake Quiz" button */
-#retake {
-    background-color: rgb(218, 186, 0);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 200px;
-    width: 10%; /* Make the button full width */
-    transition: transform 0.1s; /* Add a smooth transition effect */
-    display: none; /* Initially hidden */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
 }
 
-#retake:hover {
-    background-color: #ffbf00;
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-#retake:active {
-    transform: translateY(-5px); /* Move the button up 3 pixels when clicked */
+.modal-content {
+  margin: 10% auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* Style the answer choices */
-ul#choices li span {
-    color: #333;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Style the selected answer choice */
-input[type="radio"]:checked + span {
-    color: #FFD700;
+.close:hover {
+  color: black;
 }
 
-/* Your existing CSS styles here */
-
-/* Style the footer section */
- p {
-    text-align: center;
-    color: #333;
-    font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-style: italic;
-    font-weight: bold;
- }
-
- footer {
-    padding: 10px 0;
-    position: fixed; /* Set the footer to a fixed position */
-    bottom: 0; /* Place the footer at the bottom of the viewport */
-    width: 100%; /* Set the width of the footer to the width of the page */
+/* Footer text */
+p {
+  font-size: 1rem;
+  color: #555;
+  margin: 10px 0;
+  text-align: center;
 }
 
 .devtitle {
-    color: #a65b00e7;
-    font-size: 22px;
-    font-weight: bold;
-    margin-left: 5px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #a65b00e7;
+  margin-left: 5px;
 }
 
-
-
-
+footer {
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
