@@ -207,6 +207,10 @@ p {
   text-align: center;
 }
 
+.heart {
+  font-size: 14px;
+}
+
 .devtitle {
   font-size: 1.25rem;
   font-weight: bold;
